@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+int main()
+{
+int h1,h2,h3,m1,m2,m3,s1,s2,s3,resta;
+do{
+cout<<"Ingrese hora 1: ";
+cin>>h1;
+cout<<"ingrese minuto 1: ";
+cin>>m1;
+cout<<"ingrese segundo 1: ";
+cin>>s1;
+cout<<"Ingrese hora 2: ";
+cin>>h2;
+cout<<"ingrese minuto 2: ";
+cin>>m2;
+cout<<"ingrese segundo 2: ";
+cin>>s2;
+}
+while (h1<1||h2<1||h1>23||h2>23||m1<1||m2<1||m1>59||m2>59||s1<1||s2<1||s1>59||s2>59);
+
+resta=(h1*3600)+(m1*60)+s1-(h2*3600)-(m2*60)-s2;
+if (resta<0)
+	resta=resta*(-1);
+
+h3=resta/3600;
+m3=(resta-h3*3600)/60;
+s3=(resta-(m3*60)-(h3*3600));
+
+cout<<"la resta es de: "<<endl;
+cout<<h3<<":"<<m3<<":"<<s3;
+getch();
+
+return 0;
+}
