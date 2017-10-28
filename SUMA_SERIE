@@ -1,42 +1,45 @@
 #include "stdafx.h"
 #include <iostream>
-#include "conio.h"
 #include "math.h"
 using namespace std;
+float suma_serie(float x, int n);
+int main()
+{
 
-float serie(int n, float x);
+int n;
+float x,suma;
+    cout << "ingrese un numero entero: "<<endl;
+    cin>>n;
+    cout<<"ingrese un numero real: ";
+    cin>>x;
 
-int main(){
-int n,x,resultado;
+    suma=suma_serie(x,n);
 
-cout<<"igrese n";
-cin>>n;
-cout<<"ingrese x";
-cin>>x;
-resultado=serie(n,x);
+    cout<<"la suma de la serie es= "<<suma;
+    getch();
 
-cout<<"el resultado de la serie es: "<<resultado;
-getch();
+    return 0;
 }
 
-float serie(int n, float x){
-int i, I, factorial;
-float s, p;
-s=(3.1416/5);
-for (i=2; i<=n; i=i+2){
-			factorial=1;
-			for(I=1; I<=i; I++){
-			factorial=factorial*i;
-			}
-p=pow(x,i)/factorial;
-p=p*(-1);
-s=s+p;
+float suma_serie(float x, int n){
+int i=2, signo=1, h=2;
+float suma=0, pi=3.1416, sum1=0;
+
+if(n%2==0){
+while(i<=n){
+    if (i%2==0){
+        signo=signo*(-1);
+        sum1=(signo*pow(x,i))/h;
+        suma=suma+sum1;
+    
+      }          
+     i=i+1;
+     h=h*i;
+     }
+}
+suma=suma+(pi/5);
+
+return suma;
 
 }
 
-return s;
-
-
-
-
-}
