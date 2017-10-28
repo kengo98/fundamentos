@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+int menor(int n);
+
+int main(){
+int num;
+cout<<"ingrese un numero"<<endl;
+cin>>num;
+cout<<"el digito menor es: "<<menor(num);
+getch();
+
+return 0;
+}
+
+
+int menor(int n){
+int men=9, a;
+while(n!=0){
+a=n%10;
+   if(a<men)
+   men=a;
+n=n/10;
+}
+return men; 
+}
