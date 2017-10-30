@@ -1,0 +1,62 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void hola();
+int menor(int a, int b, int c);
+float absoluto(float a);
+int main()
+{
+int opcion;
+do{
+cout<<"*****************************PROGRMA 1**********************************"<<endl;
+cout<<"*               INGRESE LA OPCION QUE DESEA REALIZAR:                  *"<<endl;
+cout<<"*     1.- Imprimir HOLA                                                *"<<endl;
+cout<<"*     2.- Sacar el menor de tres valores A,B y C enteros               *"<<endl;
+cout<<"*     3.- Obtener el valor absoluto de un numero real                  *"<<endl;
+cout<<"*     4.- Salir del programa.                                          *"<<endl;
+cout<<"************************************************************************"<<endl;
+cin>>opcion;
+switch(opcion){
+   case 1: hola();
+           return 0;
+   case 2: int a, b, c;
+           cout<<"ingrese a,b y c respectivamente: "<<endl;
+           cin>>a>>b>>c;
+           cout<<"el numero menor es: "<<menor(a,b,c);
+           getch();
+           return 0;
+   case 3: float numero;
+           cout<<"ingrese un numero para hallar su valor absoluto: ";
+           cin>>numero;
+           cout<<"el valor absoluto del numero es: "<<absoluto(numero);
+           getch();
+   case 4: return 0;
+
+   default: cout<<"error ingrese un numero valido. ";
+            break;
+            }
+}
+while(opcion!=1 || opcion!=2 || opcion!=3 || opcion!=4);
+    return 0;
+}
+void hola(){                                                        //subprograma para imprimir hola
+cout<<"hola";
+getch();
+}
+
+int menor(int a, int b, int c){                                     //subprograma para hallar el menor numero
+int m;
+m=a;
+if(b<m)
+  m=b;
+if(c<m)
+  m=c;
+return m;
+}
+
+float absoluto(float a){                                            //subprograma para hallar el valor absoluto
+if(a<0)
+a=a*(-1);
+return a;
+}
