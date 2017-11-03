@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+bool multiplo(int a, int b);
+int main(){
+int a, b;
+bool si;
+cout<<"ingrese un numero: ";
+cin>>a;
+cout<<"ingrese le segundo numero: ";
+cin>>b;
+si=multiplo(a,b);
+if (si)
+	cout<<"es divisible";
+else
+	cout<<"no es divisible";
+
+getch();
+return 0;
+}
+bool multiplo(int a, int b){
+bool si=false;
+if (a>b)
+{
+	if (a%b==0)
+	{
+	si=true;
+	return si;
+	}
+	else 
+		return si;
+}
+else 
+	if (b%a==0)
+	{
+	si=true;
+	return si;
+	}
+	else
+		return si;
+return si;
+}
