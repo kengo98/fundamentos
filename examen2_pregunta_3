@@ -1,0 +1,34 @@
+#include "stdafx.h"
+#include <iostream>
+#include "math.h"
+#include "conio.h"
+#include "stdlib.h"
+using namespace std;
+double suma_serie(int n, double x);
+int main()
+{
+	int n, x;
+	cout<<"ingrese un numero natural: ";
+	cin>>n;
+	cout<<"ingrese un numero real: ";
+	cin>>x;
+	system("cls");
+	cout<<"la suma de la serie es: "<<suma_serie(n,x);
+	getch();
+	return 0;
+}
+double suma_serie(int n, double x){
+int a=1, b=2, c=1, signo=1;
+double suma=0, suma1=0;
+while (b<=n){
+	signo=signo*(-1);
+	suma=signo*pow(x,b)/a;
+	suma1=suma1+suma;
+	b=b+1;
+	c=c+1;
+	a=a*c;
+}
+suma1=suma1+x+2.1416;
+return suma1;
+return suma1; 
+}
