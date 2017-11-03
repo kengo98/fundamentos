@@ -1,0 +1,27 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+void precio_ferrocaril(int d, int t);
+
+int main ()
+    {
+    int d, t;
+    cout << "Ingrese la distancia del trayecto en km: ";
+    cin >> d;
+    cout << "Ingrese los Dias de estancia: ";
+    cin >> t;
+    precio_ferrocaril(d,t);
+    getch();
+ return 0;
+}
+
+void precio_ferrocaril(int d, int t)
+{
+    int p;
+    p = d *0.75;
+    if (d > 800 && t > 7)
+        p = p * 0.70;
+    cout << "El precio del ticket es de "<<p<<" $"<<endl;
+}
