@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define max 100
+using namespace std;
+int mayus(char frase[]);
+
+int main(){
+char frase[max];
+cout<<"ingrese una frase: ";
+cin.getline(frase, max, '\n');
+cout<<"existen "<<mayus(frase)<<" numero mayusculas";
+
+getch();
+return 0;
+}
+
+
+int mayus(char frase[]){
+int mayuscula=0;
+	for(int i=0; i<max; i++){
+	if (frase[i]>='A' && frase[i]<='Z')
+		mayuscula=mayuscula+1;
+	}
+
+return mayuscula;
+
+}
