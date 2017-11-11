@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+double mediacapicua(int N);
+void main()
+{
+int N;
+double m;
+do
+{
+cout << "Ingrese el valor para N: ";
+cin >> N;
+if ((N % 2 != 0) || (N < 0))
+cout << "Valor no valido" << endl;
+} while ((N % 2 != 0) || (N < 0));
+m = mediacapicua(N);
+cout << "La media de la serie es: " << m << endl;
+_getch();
+}
+double mediacapicua(int N)
+{
+double media, s = 0, j = 0, b;
+for (int i = 2; i <= N; i = i + 2)
+{
+if (i > 9)
+b = (i % 10) * 10 + (i / 10);
+else
+b = i;
+j++;
+s = s + b;
+}
+media = s / j;
+return media;
+}
